@@ -12,7 +12,7 @@ const card = [
   {
     phrase: "Go for a lap around the big billiard" ,
     translation: "Vai dar uma volta ao bilhar grande",
-    meaning: "Telling someone to stop annoying you and fuck off"
+    meaning: "Telling someone to stop annoying you and fuck off / Mandar alguém sair do caminho"
   },
   {
     phrase: "Not even if the cow coughs" ,
@@ -160,15 +160,201 @@ const card = [
     meaning: "Something you say when someone makes a mistake that's very serious/ Also something said to kids for them to "
   },
   {
-    phrase:  ,
-    translation: ,
+    phrase: "Go suck on the fifth leg of the horse",
+    translation: "Vai mamar na quinta pata do cavalo",
+    meaning: "Telling someone to fuck off, specially when they are being extra annoying"
+  },
+  {
+    phrase: "The conversation hasn't reached the kitchen",
+    translation: "A conversa ainda não chegou à cozinha",
+    meaning: "When someone says something and you don't care about their opinion"
+  },
+  {
+    phrase: "Things of the arch of the old lady",
+    translation: "Coisas do arco da velha",
+    meaning: "Used to qualify a story absurd or impossible to have happened"
+  },
+  {
+    phrase: "Cod hand-job",
+    translation: "Punheta de bacalhau",
+    meaning: "Name of a typical portuguese dish, it's cod salad, made with cod, onion, garlic and oilve oil"
+  },
+  {
+    phrase: "Lightning bolts breaking",
+    translation: "Raios partam",
+    meaning: "Same as goddamnit"
+  },
+  {
+    phrase: "Getting the clothes to the fur",
+    translation: "Chegar a roupa ao pêlo", 
+    meaning: "When you kick someone's ass"
+  },
+  {
+    phrase: "Piece of bad path",
+    translation: "Pedaço de mau caminho", 
+    meaning: "When someone is so hot that could lead you to bad decisions"
+  },
+  {
+    phrase: "Who has mouth goes to rome",
+    translation: "Quem tem boca vai a roma",
+    meaning: "If you make the right questions you can go anywhere/achieve anything"
+  },
+  {
+    phrase: "Travelling in the mayonnaise",
+    translation: "Vaijar na maionese",
+    meaning: "When someone does or says something that makes no sense/ when someone is distracted"
+  },
+  {
+    phrase: "Going on shaky ass",
+    translation: "Andar de cu tremido",
+    meaning: "Going somewhere by car"
+  },
+  {
+    phrase: "Never worse",
+    translation: "Nunca pior",
+    meaning: "When something can't be worse"
+  },
+  {
+    phrase: "I'll go to your horns",
+    translation: "Vou-te aos cornos",
+    meaning: "WHen you threaten someone that you will kick their ass"
+  },
+  {
+    phrase: "Having fabric for sleeves",
+    translation: "Ter pano para mangas",
+    meaning: "Used when there's a lot to talk about a certain topic"
+  },
+  {
+    phrase: "Where the devil lost his boots",
+    translation: "Onde o diabo perdeu as botas",
+    meaning: "Somewhere far away"
+  },
+  {
+    phrase: "You smell like milk",
+    translation: "Cheiras a leite",
+    meaning: "Refering to someone young, or when someone dares you to do something and you chicken out"
+  },
+  {
+    phrase: "You are a delay of life",
+    translation: "És um atraso de vida",
+    meaning: ""
+  },
+  {
+    phrase: "Are you from Braga?",
+    translation: "És de Braga?",
+    meaning: "Question asked to someone who leaves the door open"
+  },
+  {
+    phrase: "Giving the last ones",
+    translation: "Dar as últimas",
+    meaning: "When someone is really sick, or when something is almost broken"
+  },
+  {
+    phrase: "Olive Oil Maker",
+    translation: "Azeiteiro",
+    meaning: "Someone trashy, ignorant, or a simple, but not in a good way"
+  },
+  {
+    phrase: "Give shed",
+    translation: "Dar barraca",
+    meaning: "Not being discreet, "
+  },
+  {
+    phrase: 
+    translation: 
     meaning: 
   },
   {
-    phrase:  ,
-    translation: ,
+    phrase: 
+    translation: 
     meaning: 
   },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+  {
+    phrase: 
+    translation: 
+    meaning: 
+  },
+
 ]
 
 
