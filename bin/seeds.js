@@ -237,7 +237,7 @@ const card = [
   {
     phrase: "You are a delay of life",
     translation: "És um atraso de vida",
-    meaning: ""
+    meaning: "Someone who doesn't do anything productive"
   },
   {
     phrase: "Are you from Braga?",
@@ -257,82 +257,82 @@ const card = [
   {
     phrase: "Give shed",
     translation: "Dar barraca",
-    meaning: "Not being discreet, "
+    meaning: "Not being discreet"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Having the king in the belly",
+    translation: "Ter o rei na barriga",
+    meaning: "When someone acts in an arrogant way, because they think they are more important then everyone else"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "When you don't know how to fuck, even the testicles are in the way",
+    translation: "Quando não se sabe foder, até os colhões atrapalham",
+    meaning: "when people don't know how to do something and everything makes it harder"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Who knows, knows",
+    translation: "Quem sabe, sabe",
+    meaning: "Normally said by someone who knows what he's talking about"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "You don't know the mass at half",
+    translation: "Não sabes da missa a metade",
+    meaning: "When you are unaware of the full scope of a situation"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Like big people",
+    translation: "Como gente grande",
+    meaning: "Doing something well, with ease"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Life stepmother", 
+    translation: "vida madrasta",
+    meaning: "Situations that bring sadness and misery"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "The Hell is full of good intentions",
+    translation: "De boas intenções está o inferno cheio",
+    meaning: "Only having good intentions is not enough, you actually have to take action and make it better"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "With the face of few friends",
+    translation: "Com cara de poucos amigos",
+    meaning: "When someone looks angry or annoyed"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "You tire my beauty",
+    translation: "Cansas-me a beleza",
+    meaning: "When someone is annoying you, you imply that you are getting wrinkles from having to deal with them"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Son of 30 hookers",
+    translation: "Filho de 30 putas",
+    meaning: "Something that you call to someone that is an absolute dick"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Gild the pill",
+    translation: "Dourar a pílula",
+    meaning: "Say something in a way that makes it seem better that actually is"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Who goes to the sea loses the spot",
+    translation: "Quem vai ao mar perde o lugar",
+    meaning: "Normally when someone steals your seat, also used when you miss an opportunity"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Being with the olive oils",
+    translation: "Estar com os azeites",
+    meaning: "When you are in a bad mood, angry or annoyed"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Pooping a toast",
+    translation: "Cagar uma tosta",
+    meaning: "When you don't care about something or someone"
   },
   {
-    phrase: 
-    translation: 
-    meaning: 
+    phrase: "Who goes to war gives and takes",
+    translation: "Quem vai à guerra dá e leva",
+    meaning: ""
   },
   {
     phrase: 
