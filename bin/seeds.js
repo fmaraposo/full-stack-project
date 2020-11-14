@@ -1,7 +1,11 @@
-const mongoose = require('mongoose');´
+const mongoose = require('mongoose');
 const Card = require('../models/Card.js');
+<<<<<<< HEAD
+const DB_NAME = 'proverbs';
+=======
 const DB_NAME = 'proverb';
 
+>>>>>>> 3fb02dafc3c825b97f0b95bc637e8aee98110052
 mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
   useCreateIndex: true,
   useNewUrlParser: true,
