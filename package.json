@@ -20,5 +20,20 @@
   },
   "devDependencies": {
     "nodemon": "^1.12.1"
-  }
+  },
+  "main": "app.js",
+  "bin": {
+    "dummy": "seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anac-jeronimo/full-stack-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anac-jeronimo/full-stack-project/issues"
+  },
+  "homepage": "https://github.com/anac-jeronimo/full-stack-project#readme",
+  "description": ""
 }
