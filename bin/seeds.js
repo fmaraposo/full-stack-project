@@ -1,11 +1,6 @@
 const mongoose = require('mongoose');
 const Card = require('../models/Card.js');
-<<<<<<< HEAD
-const DB_NAME = 'proverbs';
-=======
-const DB_NAME = 'proverb';
-
->>>>>>> 3fb02dafc3c825b97f0b95bc637e8aee98110052
+const DB_NAME = 'proverbs-app';
 mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
   useCreateIndex: true,
   useNewUrlParser: true,
@@ -339,7 +334,7 @@ const card = [
     meaning: "Normally used when you get into a fight, you hit and get hit, or in any situation between two people, where both sides get something good and bad"
   },
   {
-    phrase: "It's the side towards I sleep the best"
+    phrase: "It's the side towards I sleep the best",
     translation: "É para o lado que eu durmo melhor",
     meaning: "When something doesn't bother you"
   },
@@ -404,7 +399,7 @@ const card = [
     meaning: "Catching someone in the middle of the act, normally when they are up to no good"
   },
   {
-    phrase: "If you weren't born you would have to be invented"
+    phrase: "If you weren't born you would have to be invented",
     translation: "Se não nascesses tinhas de ser inventado",
     meaning: "Normally said when someone does something weird of unexpected"
   },
@@ -1326,13 +1321,13 @@ const card = [
   }
  
 
-]
+] 
 
 
 
 
-Card.create(movies)
+Card.create(card)
  .then(cardFromDb => {
-   console.log(`Created ${cardFromDb.length} movies`);
+   console.log(`Created ${cardFromDb.length} proverbs`);
    mongoose.connection.close(); 
  }).catch(err => console.log(`An error occurred while creating movies from the DB: ${err}`));

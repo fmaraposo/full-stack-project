@@ -8,10 +8,12 @@
     "dev-windows": "nodemon ./bin/www"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
+    "express-session": "^1.17.1",
     "hbs": "^4.0.1",
     "mongoose": "^5.2.10",
     "morgan": "^1.9.0",
@@ -19,7 +21,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^1.12.1"
+    "nodemon": "^1.19.4"
   },
   "main": "app.js",
   "bin": {
@@ -35,5 +37,6 @@
     "url": "https://github.com/anac-jeronimo/full-stack-project/issues"
   },
   "homepage": "https://github.com/anac-jeronimo/full-stack-project#readme",
+  "keywords": [],
   "description": ""
 }
