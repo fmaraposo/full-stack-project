@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const saltRound = 10; //nivel de encriptação da password
 const User = require('../models/User');
+const fileUpload = require('../configs/cloudinary')
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
@@ -12,6 +13,7 @@ router.post('/signup', (req, res) => {
   const {username, email, password} = req.body;
   const salt = bcrypt.genSaltSync(saltRound);
   const hashPassword = bcrypt.hashSync(password, salt);
+  let fileUrlOnCloudinary = req.file.path;
   if(username === '' || password === '') {
       res.render('auth/signup', {
           errorMessage: 'Please check username and password'
@@ -27,7 +29,7 @@ router.post('/signup', (req, res) => {
           return;
       }
   
-  User.create({ username, email, password: hashPassword})
+  User.create({ username, email, password: hashPassword, imageUrl: fileUrlOnCloudinary})
   .then(() => {
       res.redirect('/');
   })
