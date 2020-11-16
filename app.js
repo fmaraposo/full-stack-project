@@ -12,7 +12,7 @@ const session = require('express-session');
 
 
 mongoose
-  .connect('mongodb://localhost/dummy', {useNewUrlParser: true})
+  .connect('mongodb://localhost/proverbs-app', {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })

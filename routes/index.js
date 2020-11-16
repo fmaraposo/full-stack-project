@@ -17,6 +17,10 @@ router.get('/', (req, res, next) => {
   res.render('index', {user: req.session.currentUser});
 });
 
+router.get('/index', (req, res) => {
+  res.render('index');
+})
+
 router.get('/private', requiredLogin, (req, res, next) => {
   res.render('private');
 });
