@@ -1,8 +1,6 @@
 const express = require('express');
 const router  = express.Router();
 
-
-
 function requiredLogin(req, res, next) {
   if(req.session.currentUser) {
       next();
@@ -17,15 +15,18 @@ router.get('/', (req, res, next) => {
   res.render('index', {user: req.session.currentUser});
 });
 
+
+/* router.get('/main', requiredLogin, (req, res, next) => {
+  res.render('main');
+}); */
+
 router.get('/index', (req, res) => {
   res.render('index');
-})
+});
 
 router.get('/private', requiredLogin, (req, res, next) => {
   res.render('private');
 });
-
-
 
 module.exports = router;
 

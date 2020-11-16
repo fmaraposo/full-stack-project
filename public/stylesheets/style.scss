@@ -7,17 +7,30 @@ a {
   color: #00B7FF;
 }
 
+//Web Page Layout
+
 .row {
   margin-top:30px;
 }
+
 .card{
-  height: 380px;
+  height: 300px;
 }
+
 h1 {
   padding-top: 70px;
   padding-bottom: 20px;
 }
-.form-control{
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+//NavBar
+
+.form-control{ //Also Signup and Login Form
   width: 30% !important;
 }
 .search-form{
@@ -47,6 +60,8 @@ nav {
   padding-right: 20px;
 }
 
+//Cards
+
 .volume-icon {
   display: flex;
   justify-content: flex-end;
@@ -61,3 +76,28 @@ nav {
   background-color: white;
   border: none;
 }
+
+.thumbsup-icon {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px;
+}
+
+.thumbsup-icon img {
+  width: 25px;
+  height: 25px;
+}
+
+.btn-thumbsup-icon {
+  background-color: white;
+  border: none;
+}
+
+.card-title {
+  text-align: center;
+  position: relative;
+  top: 70px;
+}
+
+//Sign Up Form
+

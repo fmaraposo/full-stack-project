@@ -9,11 +9,16 @@ a {
   margin-top: 30px; }
 
 .card {
-  height: 380px; }
+  height: 300px; }
 
 h1 {
   padding-top: 70px;
   padding-bottom: 20px; }
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 .form-control {
   width: 30% !important; }
@@ -55,5 +60,23 @@ nav {
 .btn-volume-icon {
   background-color: white;
   border: none; }
+
+.thumbsup-icon {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 10px; }
+
+.thumbsup-icon img {
+  width: 25px;
+  height: 25px; }
+
+.btn-thumbsup-icon {
+  background-color: white;
+  border: none; }
+
+.card-title {
+  text-align: center;
+  position: relative;
+  top: 70px; }
 
 /*# sourceMappingURL=style.css.map */
