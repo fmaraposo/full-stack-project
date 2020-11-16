@@ -9,11 +9,12 @@ router.get('/signup', (req, res) => {
   res.render('auth/signup');
 });
 
-router.post('/signup', (req, res) => {
+router.post('/signup', fileUpload.single('image'), (req, res) => {
   const {username, email, password} = req.body;
   const salt = bcrypt.genSaltSync(saltRound);
   const hashPassword = bcrypt.hashSync(password, salt);
-  let fileUrlOnCloudinary = req.file.path;
+  let fileUrlOnCloudinary = req.file.url;
+  console.log(req.file.url)
   if(username === '' || password === '') {
       res.render('auth/signup', {
           errorMessage: 'Please check username and password'
