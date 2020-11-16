@@ -6,3 +6,54 @@ a {
   color: #00B7FF; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+.row {
+  margin-top:30px;
+}
+
+.card{
+  height: 380px;
+}
+
+h1 {
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+.form-control{
+  width: 30% !important;
+}
+
+.search-form{
+  width: 50% ;
+  display: flex;
+  justify-content: flex-end;
+  
+  
+}
+.btn-outline-success {
+  margin-right: 30px;
+  margin-left: 20px;
+  width: 130px;
+  font-size: 23px !important;
+}
+
+.search-bar{
+  width: 60% !important;
+  font-size: 23px !important;
+}
+
+nav {
+  height: 90px;
+  font-size: 23px;
+ 
+}
+.navbar-brand {
+  margin-left: 20px;
+  padding-right: 30px;
+}
+
+.nav-item{
+  padding-right: 20px;
+}

@@ -1,5 +1,5 @@
-<h2>Login</h2>
-
+<h1>Login</h1>
+<!--
 <form action="/login" method="POST">
   <label>
     Username
@@ -18,4 +18,22 @@
 
 <p>
   Don't have an account? Sign up <a href="/signup">here</a>
-</p>
+</p>   -->
+
+<form action="/login" method="POST">
+  <div class="form-group">
+    <label for="exampleInputUser1">Username</label>
+    <input type="text" required class="form-control" id="exampleInputUser1" aria-describedby="userHelp">
+    <small id="userHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" required class="form-control" id="exampleInputPassword1">
+    <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<p >
+  Don't have an account? Sign up <a href="/signup">here</a>
+</p> 
