@@ -114,7 +114,7 @@ const card = [
     meaning: "Used when discussing a topic that is impossible to reach a conclusion/waste of time"
   },
   {
-    phrase: "And if my grandma had whells, she would be aa truck",
+    phrase: "And if my grandma had whells, she would be a truck",
     translation: "E se a minha avó tivesse rodas, seria um camião",
     meaning: "Response to when a person talks hipothetically about a situation that could happen, but didn't"
   },
@@ -124,7 +124,7 @@ const card = [
     meaning: "When you have to improvise using what you have to solve a problem"
   },
   {
-    phrase: "Who doesn't cry, doens't suckle",
+    phrase: "Who doesn't cry, doesn't suckle",
     translation: "Quem não chora não mama",
     meaning: "Who doesn't ask or go after what they want, doesn't get it"
   },
@@ -135,7 +135,7 @@ const card = [
   },
   {
     phrase: "I make question",
-    translation: "FAço questão",
+    translation: "Faço questão",
     meaning: "Means that you are really want to do something" 
   },
   {
