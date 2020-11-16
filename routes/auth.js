@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const saltRound = 10;
-const User = require('../models/User.model');
+const saltRound = 10; //nivel de encriptação da password
+const User = require('../models/User');
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
@@ -15,7 +15,7 @@ router.post('/signup', (req, res) => {
   if(username === '' || password === '') {
       res.render('auth/signup', {
           errorMessage: 'Please check username and password'
-      })
+      });
       return;
   }
   User.findOne({'username' : username})
@@ -34,13 +34,13 @@ router.post('/signup', (req, res) => {
   .catch((error) => {
     res.render('auth/signup', {
         errorMessage : 'Invalid credentials'
-        })  
+        });
       });
-    })
+    });
 });
 
 router.get('/login', (req, res) => {
-  res.render('auth/login')
+  res.render('auth/login');
 });
 
 router.post('/login', (req, res) => {
@@ -57,7 +57,7 @@ router.post('/login', (req, res) => {
       if(!user) {
           res.render('auth/login', {
               errorMessage: 'Invalid login'
-          })
+          });
           return;
       }
       if(bcrypt.compareSync(password, user.password)) {
@@ -73,6 +73,6 @@ router.post('/login', (req, res) => {
 
 router.post('/logout', (req, res) => {
   req.session.destroy();
-})
+});
 
 module.exports = router;

@@ -8,9 +8,9 @@ const cardSchema = new Schema (
       meaning: String
     }, 
     {
-      timestamps: true  //created and uptadet at....
+      timestamps: true  //created and updated at....
     }
     
-  )
+  );
 
 module.exports = model('Card', cardSchema);

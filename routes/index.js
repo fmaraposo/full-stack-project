@@ -23,7 +23,7 @@ router.get('/private', requiredLogin, (req, res, next) => {
 
 router.get('/main', requiredLogin, (req, res, next) => {
   res.render('main');
-})
+});
 
 module.exports = router;
 

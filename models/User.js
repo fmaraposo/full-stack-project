@@ -19,6 +19,6 @@ const userSchema = new Schema (
             required: [true, "Password is required"]
             }
     }   
-)
+);
 
 module.exports = model('User', userSchema);

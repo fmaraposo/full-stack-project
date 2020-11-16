@@ -1319,11 +1319,7 @@ const card = [
     translation:"Putas e vinho verde",
     meaning: "Living the life"
   }
- 
-
-] 
-
-
+];
 
 
 Card.create(card)
