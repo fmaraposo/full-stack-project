@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const saltRound = 10;
-const User = require('../models/User.model');
+const User = require('../models/User');
 
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
