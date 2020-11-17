@@ -1,13 +1,17 @@
+<h1>MAIN</h1>
+
 <div class="card-deck container">
-  {{#each card}}
-  <div class="row top-row">
-    <div class="card col-4">
+  <div class="row">
+    {{#each cards}}
+    <div class="card col-md-4">
       <div class="card-body">
-        <div class="volume-icon"><button class="btn-volume-icon"><img src="../images/audio.png" alt="text-to-speech"></button></div>
-        <h3 class="card-title"> {{card.phrase}} </h3>
+        <div class="volume-icon"><button class="btn-volume-icon"><img src="../images/audio.png"
+              alt="text-to-speech"></button></div>
+        <h3 class="card-title"> {{cards.phrase}} </h3>
       </div>
-      <div class="thumbsup-icon"><button class="btn-thumbsup-icon"><img src="../images/thumbs_up.png" alt="like-button"></button></div>
-    </div>
+      <div class="thumbsup-icon"><button class="btn-thumbsup-icon"><img src="../images/thumbs_up.png"
+            alt="like-button"></button></div>
     </div>
     {{/each}}
- </div>
+  </div>
+</div>

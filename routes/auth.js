@@ -51,7 +51,7 @@ router.post('/login', (req, res) => {
 
   if(!username || !password) {
       res.render('auth/login', {
-          errorMessage: 'Please insert username and password'   //////
+          errorMessage: 'Please insert username and password'  
       }); 
       return;
   }
@@ -65,7 +65,7 @@ router.post('/login', (req, res) => {
       }
       if(bcrypt.compareSync(password, user.password)) {
           req.session.currentUser = user;
-          res.redirect('/');
+          res.redirect('/main');
       }  else {
           res.render('auth/login', {
               errorMessage: 'Invalid login'
