@@ -51,8 +51,8 @@ router.post('/login', (req, res) => {
 
   if(!username || !password) {
       res.render('auth/login', {
-          errorMessage: 'Please insert username and password'
-      });
+          errorMessage: 'Please insert username and password'   //////
+      }); 
       return;
   }
   User.findOne({'username' : username})
