@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(
   session({
       secret: 'my proverb',
-      cookie: {maxAge: 300000},
+      cookie: {maxAge: 300000}, ///
       rolling: true
   })
 );
@@ -69,8 +69,7 @@ app.use('/', index);
 const auth = require('./routes/auth');
 app.use('/', auth);
 
-// const main = require('./routes/main');
-// app.use('/', main);
+
 
 
 module.exports = app;

@@ -1,23 +1,25 @@
 <h1>Login</h1>
 
-{{#if errorMessage}}
-  <div class="error"> {{errorMessage}} </div>
-{{/if}}
 
 <form action="/login" method="POST">
   <div class="form-group">
     <label for="exampleInputUser1">Username</label>
-    <input type="text" required class="form-control" id="exampleInputUser1" aria-describedby="userHelp">
+    <input type="text" required name="username" class="form-control" id="exampleInputUser1" aria-describedby="userHelp">
     <small id="userHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" required class="form-control" id="exampleInputPassword1">
+    <input type="password" name="password" required class="form-control" id="exampleInputPassword1">
     <small id="passwordHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
+  {{#if errorMessage}}
+  <div class="error"> {{errorMessage}} </div>
+{{/if}}
+
 </form>
 <br>
+
 <p >
   Don't have an account? Sign up <a href="/signup">here</a>
 </p> 

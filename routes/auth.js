@@ -28,7 +28,7 @@ router.post('/signup', fileUpload.single('image'), (req, res) => {
               errorMessage: 'This username is already taken'
           }); 
           return;
-    //   }
+      }
   
   User.create({ username, email, password: hashPassword, imageUrl: fileUrlOnCloudinary})
   .then(() => {
@@ -51,8 +51,8 @@ router.post('/login', (req, res) => {
 
   if(!username || !password) {
       res.render('auth/login', {
-          errorMessage: 'Please insert username and password'
-      });
+          errorMessage: 'Please insert username and password'  
+      }); 
       return;
   }
   User.findOne({'username' : username})
@@ -65,7 +65,7 @@ router.post('/login', (req, res) => {
       }
       if(bcrypt.compareSync(password, user.password)) {
           req.session.currentUser = user;
-          res.redirect('/');
+          res.redirect('/main');
       }  else {
           res.render('auth/login', {
               errorMessage: 'Invalid login'
