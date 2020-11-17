@@ -76,4 +76,14 @@ nav {
   position: relative;
   top: 70px; }
 
+.mycard {
+  border: 1px solid black;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .25rem;
+  margin-right: 15px;
+  margin-left: 15px;
+  margin-bottom: 30px; }
+
 /*# sourceMappingURL=style.css.map */
