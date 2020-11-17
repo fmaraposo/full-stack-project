@@ -1,4 +1,16 @@
 <h2>My area</h2>
-{{#each foundLikes}}
- {{card.phrase}}  
-{{/each}}
+
+
+<div class="card-deck container-fluid">
+  <div class="row d-flex flex-wrap">
+    {{#each foundLikes}}
+    <div class="mycard col-4">
+      <div class="card-body">
+        <div class="volume-icon"><button class="btn-volume-icon"><img src="../images/audio.png"
+              alt="text-to-speech"></button></div>
+        <h3 class="card-title"> {{card.phrase}}  </h3>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

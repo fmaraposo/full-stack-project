@@ -40,10 +40,25 @@ router.post('/main/:cardId', (req, res) => {
     res.redirect('/main');
   })
 })
+
+
+router.get('/create', requiredLogin, (req, res, next) => {
+  req.app.locals.loggedUser = req.session.currentUser;
+ res.render('create');
+});
+
+router.post('/create', requiredLogin, (req, res, next) => {
+  req.app.locals.loggedUser = req.session.currentUser;
+  let {phrase, translation, meaning} = req.body;
+  Card.create({
+    phrase,
+    translation,
+    meaning
+  }). then(() => {
+    res.render('create');
+  })
+});
  
-
-
-
 
 
 module.exports = router;
