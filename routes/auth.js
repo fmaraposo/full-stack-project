@@ -28,7 +28,7 @@ router.post('/signup', fileUpload.single('image'), (req, res) => {
               errorMessage: 'This username is already taken'
           }); 
           return;
-      }
+    //   }
   
   User.create({ username, email, password: hashPassword, imageUrl: fileUrlOnCloudinary})
   .then(() => {
