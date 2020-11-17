@@ -32,6 +32,8 @@ router.get('/main', requiredLogin, (req, res, next) => {
   res.render('main');
 });
  
-
+router.get('contacts', (req, res, next) => {
+  res.render('contacts');
+})
 module.exports = router;
 
