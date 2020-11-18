@@ -55,7 +55,7 @@ router.post('/create', requiredLogin, (req, res, next) => {
     translation,
     meaning
   }). then(() => {
-    res.render('create');
+    res.redirect('/main');
   })
 });
 
