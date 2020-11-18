@@ -38,8 +38,8 @@ router.post('/main/:cardId', (req, res) => {
     card: cardId
   }).then(() => {
     res.redirect('/main');
-  })
-})
+  });
+});
 
 
 router.get('/create', requiredLogin, (req, res, next) => {
@@ -56,7 +56,7 @@ router.post('/create', requiredLogin, (req, res, next) => {
     meaning
   }). then(() => {
     res.render('create');
-  })
+  });
 });
 
 
