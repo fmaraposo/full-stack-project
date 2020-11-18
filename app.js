@@ -12,7 +12,7 @@ const session = require('express-session');
 
 
 mongoose
-  .connect('mongodb://localhost/proverbs-app', {useNewUrlParser: true})
+  .connect(process.env.MONGO_DB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
   })
@@ -72,6 +72,7 @@ app.use('/', auth);
 const main = require('./routes/main');
 app.use('/', main);
 
-
+const flashcard = require('./routes/flashcard');
+app.use('/', flashcard);
 
 module.exports = app;

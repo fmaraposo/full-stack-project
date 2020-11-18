@@ -1,17 +1,21 @@
+require('dotenv').config();
+//const googleTtsApi = require('google-tts-api');
 const mongoose = require('mongoose');
+//const { default: createCloudinaryStorage } = require('multer-storage-cloudinary');
 const Card = require('../models/Card.js');
 const DB_NAME = 'proverbs-app';
-mongoose.connect(`mongodb://localhost/${DB_NAME}`, {
+mongoose.connect('mongodb+srv://admin:admin1234@cluster0.y3zeb.mongodb.net/proverbs-app?retryWrites=true&w=majority', {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
 }); 
+const googleTTS = require('google-tts-api');
 
-const card = [
-  {
+const cards = [/*
+   {
     phrase: "Go for a lap around the big billiard" ,
     translation: "Vai dar uma volta ao bilhar grande",
-    meaning: "Telling someone to stop annoying you and fuck off / Mandar alguém sair do caminho"
+    meaning: "Telling someone to stop annoying you and fuck off"
   },
   {
     phrase: "Not even if the cow coughs" ,
@@ -462,7 +466,7 @@ const card = [
     phrase: "You are a good fork",
     translation: "Tu és um bom garfo",
     meaning: "If you eat well, and like all types off food, or not being picky"
-  },
+  },*/
   {
     phrase: "Doing a little cow",
     translation: "Fazer uma vaquinha",
@@ -714,7 +718,7 @@ const card = [
     phrase: 'Give two fingers of conversation',
     translation:'Dar dois dedos de conversa',
     meaning: 'Briefly talking to someone'
-  },
+  }/*,
   {
     phrase: 'Calling Gregory',
     translation:'Chamar o Gregório',
@@ -985,8 +989,8 @@ const card = [
     phrase: 'Breaking the coconut laughing',
     translation:'Partir o coco a rir',
     meaning: 'Describes something really funny'
-  },
-  {
+  }, */
+  /* {
     phrase: 'I never saw him fatter',
     translation:'Nunca o vi mais gordo',
     meaning: 'Way to see you never saw that person in your life'
@@ -1318,12 +1322,63 @@ const card = [
     phrase: "Whores and green wine",
     translation:"Putas e vinho verde",
     meaning: "Living the life"
-  }
+  }  */
 ];
 
 
-Card.create(card)
+
+cards.forEach((card) => {
+  let phraseAudioEng="";
+  let translationAudioPt="";
+  let meaningAudioEng="";
+  googleTTS(`${card.phrase}`, 'en', 1)
+  .then((phraseAudioEngFromTTS) => {
+    phraseAudioEng = phraseAudioEngFromTTS;
+    return googleTTS(`${card.translation}`, 'pt', 1)
+    .then((translationAudioPtFromTTS) => {
+      translationAudioPt=translationAudioPtFromTTS;
+      return googleTTS(`${card.meaning}`, 'en', 1)
+      .then(meaningAudioEngFromTTS => {
+        meaningAudioEng = meaningAudioEngFromTTS;
+      return Card.create({
+        phrase: card.phrase,
+        translation: card.translation,
+        meaning: card.meaning,
+        phraseAudioEng,
+        translationAudioPt,
+        meaningAudioEng
+      }).then((cardFromDb) => {
+        console.log(`Created a ${cardFromDb.phrase} new proverb card`)
+      }).catch((err) => {
+        console.log(`Error occured: ${err}`)
+      })
+    });
+  });
+});
+})
+
+
+/* cards.forEach((card) => {
+  let urleng = "";
+  let urlpt = "";
+  googleTTS(`${phrase}`, 'en', 1)
+  .then((url) => {
+    urleng = url;
+    return googleTTS(`${phrase}`, 'pt', 1)
+    .then((url2) => {
+      urlpt = url2;
+      return Card.create({
+        phrase,
+        translation,
+        meaning,
+        urleng,
+        urlpt
+}) */
+    
+
+/* Card.create(card)
  .then(cardFromDb => {
    console.log(`Created ${cardFromDb.length} proverbs`);
    mongoose.connection.close(); 
  }).catch(err => console.log(`An error occurred while creating movies from the DB: ${err}`));
+ */

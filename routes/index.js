@@ -9,24 +9,27 @@ const { createIndexes } = require('../models/Card');
 /* GET home page */
 router.get('/', (req, res, next) => {
   req.app.locals.loggedUser = req.session.currentUser;
-  res.render('index', {user: req.session.currentUser});
+  Card.find()
+  .limit(6)
+  .then((allCardsFromDB) => {
+    res.render('index', {user: req.session.currentUser, cards: allCardsFromDB});
+  });
 });
 
-router.get('/index', (req,res) => {
-  res.render('index');
-});
-
-/* router.post('/:cardId', (req,res,next) => {
+router.post('/card/:cardId', (req,res,next) => {
   let cardId = req.params.cardId;
-  Card.find(cardId)
+  Card.findById(cardId)
   .then((card) => {
-    googleTTS(`${card.phrase}`, 'en', 1);
-    console.log(url);
+    googleTTS(`${card.phrase}`, 'en', 1)
+    .then((url) => {
+      console.log(url);
+      res.json({url});
+    });
   })
   .catch((err) => {
     console.error(err.stack);
   });
-}); */
+});  
 
 router.get('/contacts', (req, res, next) => {
   res.render('contacts');

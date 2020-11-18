@@ -16,10 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Index API
 
-let indexAudio = document.getElementsByClassName('volume-icon');
+/* let indexAudio = document.getElementsByClassName('volume-icon');
 
 indexAudio.addEventListener('onclick', () => {
   
-});
+}); */
+
+
 
 

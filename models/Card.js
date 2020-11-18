@@ -5,7 +5,10 @@ const cardSchema = new Schema (
     {
       phrase:  String,
       translation: String,
-      meaning: String
+      meaning: String,
+      phraseAudioEng: String,
+      translationAudioPt: String,
+      meaningAudioEng: String
     }, 
     {
       timestamps: true  //created and updated at....
@@ -13,4 +16,4 @@ const cardSchema = new Schema (
     
   );
 
-module.exports = model('Card', cardSchema);
+module.exports = model('Proverb', cardSchema);

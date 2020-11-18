@@ -1,51 +1,22 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-<div class="card-deck">
-  <div class="row">
-    <div class="card col-4">
-      <div class="card-body front-card">
-        <form action="/:cardId" method="POST"><button type="submit"><div class="volume-icon"><img src="../images/volume.png" alt="text-to-speech"></div></button></form>
-        <h3 class="mycard-title">Not even if the cow coughs</h3>
-      </div>
-      <div class="card-body back-card">
-        <form action="/:cardId" method="POST"><button type="submit"><div class="volume-icon"><img src="../images/volume.png" alt="text-to-speech"></div></button></form>
-        <h3 class="mycard-title">Back</h3>
-      </div>
-    </div>
-    <div class="card col-4">
-      <div class="card-body">
-        <div class="volume-icon"><img src="../images/volume.png" alt="text-to-speech"></div>
-        <h3 class="mycard-title">What a Zé Anthony</h3>
-      </div>
-    </div>
-    <div class="card col-4">
-      <div class="card-body">
-        <div class="volume-icon"><img src="../images/volume.png" alt="text-to-speech"></div>
-        <h3 class="mycard-title">Seeing yourself greek</h3>
+<div class="card-deck container-fluid">
+  {{#each cards}}
+  <div class="mycard col-3">
+    <div class="mycard-body">
+      <form action="/card/{{_id}}" method="POST"> <button type="submit">
+          <div class="volume-main-icon"><img src="../images/volume.png" alt="text-to-speech"></div>
+        </button></form>
+      <h3 class="mycard-title"> {{phrase}} </h3>
+      <div class="thumbsup-icon">
+        <form action="/main/{{_id}}" method="POST">
+          <button type="submit" class="btn-thumbsup-icon">
+            <img src="../images/thumbs_up.png" alt="like-button">
+          </button>
+        </form>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="card col-4">
-      <div class="card-body">
-        <div class="volume-icon"><img src="../images/volume.png" alt="text-to-speech"></div>
-        <h3 class="mycard-title">I'll go to your horns</h3>
-      </div>
-    </div>
-    <div class="card col-4">
-      <div class="card-body">
-        <div class="volume-icon"><img src="../images/volume.png"
-              alt="text-to-speech"></div>
-        <h3 class="mycard-title">Having the king in the belly</h3>
-      </div>
-    </div>
-    <div class="card col-4">
-      <div class="card-body">
-        <div class="volume-icon"><img src="../images/volume.png"
-              alt="text-to-speech"></div>
-        <h3 class="mycard-title">Being with the olive oils</h3>
-      </div>
-    </div>
-  </div>
+  {{/each}}
 </div>
