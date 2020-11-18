@@ -12,8 +12,11 @@ router.get('/', (req, res, next) => {
   res.render('index', {user: req.session.currentUser});
 });
 
+router.get('/index', (req,res) => {
+  res.render('index');
+});
 
-router.post('/:cardId', (req,res,next) => {
+/* router.post('/:cardId', (req,res,next) => {
   let cardId = req.params.cardId;
   Card.find(cardId)
   .then((card) => {
@@ -23,7 +26,7 @@ router.post('/:cardId', (req,res,next) => {
   .catch((err) => {
     console.error(err.stack);
   });
-});
+}); */
 
 router.get('/contacts', (req, res, next) => {
   res.render('contacts');
