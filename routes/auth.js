@@ -5,6 +5,7 @@ const saltRound = 10; //nivel de encriptação da password
 const User = require('../models/User');
 const fileUpload = require('../configs/cloudinary');
 
+
 router.get('/signup', (req, res) => {
   res.render('auth/signup');
 });

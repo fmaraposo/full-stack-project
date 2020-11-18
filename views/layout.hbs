@@ -13,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap"
     rel="stylesheet">
 </head>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +36,8 @@
         <a class="nav-link" href="/contacts">Contacts</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0 search-form">
-      <input class="form-control mr-sm-2  search-bar" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <input id="search-text" class="form-control mr-sm-2  search-bar" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" onclick="filter()" type="button">Search</button>
   </div>
 </nav>
 
@@ -54,29 +53,35 @@
       <li class="nav-item active">
         <a class="nav-link" href="/main">Home <span class="sr-only">(current)</span></a>
       </li>
+
+  
+      
       <li class="nav-item">
         <a class="nav-link" href="/create">Create</a>
       </li>
       <li class="nav-item">
        <form action="/logout" method="POST" >
        <button type="submit" class="nav-link  logout-btn" >Logout</button>
-       </form>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contacts">Contacts</a>
+       </form>      
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/myArea">My Area</a>
+      </li> 
+      
+       
+      
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/contacts">Contacts</a>
       </li>
- 
-    </ul>
-    <form class="form-inline my-2 my-lg-0 search-form">
-      <input class="form-control mr-sm-2  search-bar" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      
+    </ul>   
+     {{/if}}
+    <input id="search-text" class="form-control mr-sm-2  search-bar" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-primary my-2 my-sm-0" onclick="filter()" type="button">Search</button>
   </div>
 </nav>
-{{/if}}
+
 
 
 <body>
@@ -85,6 +90,35 @@
   {{{body}}}
 
   <script src="/javascripts/script.js"></script>
+  <script>
+    function filter(){
+    let searchParameter = document.getElementById('search-text').value; //palavra a procurar
+    let titleElements = document.getElementsByClassName('card-title'); //array de elementos com classe card-title <h3>titulos</h3>
+
+    for(let i = 0; i < titleElements.length; i++){ //iterar cada titulo
+
+      let card = titleElements[i].parentElement; //ir buscar o elemento pai do titulo
+      let cardElement = card.parentElement; //ir buscar o avó do titulo
+      let title = titleElements[i].innerText; //buscar ao elemento titulo o seu texto (o que está realmente dentro do h3)
+      let titleArray = title.split(' '); //fazer split to texto para um array
+      let searchToUpper = searchParameter.toUpperCase(); //passar o texto a procurar para CAPS
+      let found = false; //variável auxiliar para saber se encontrámos match, inicializada a false porque a cada novo título partimos do princípio que não houve match
+      for(let k = 0; k < titleArray.length; k++){ //iterar cada palavra do título
+        let titleToUpper = titleArray[k].toUpperCase(); //passar a palavra a CAPS
+        if(titleToUpper.includes(searchToUpper)){ //comparar cada palavra com o texto a procurar
+          found = true; //se houver match variável auxiliar passa a true
+          cardElement.style.display = 'block'; //o elemento avó fica com display block (visível)
+          break; //break para sair do loop e continuar o código -> if(!found)
+        }
+      }
+      if(!found){ //se não tiver existido match
+      cardElement.style.display = 'none'; //esconder o avó alterando a propriedade display para none
+      }
+      
+    }
+    
+  }
+  </script>
 </body>
 
 </html>
