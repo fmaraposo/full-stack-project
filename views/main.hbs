@@ -1,6 +1,6 @@
 <h1>MAIN</h1>
 
-<div class="card-deck container-fluid">
+<!-- <div class="card-deck container-fluid">
            <audio controls>
         <source src="{{urleng}}" type="audio/mpeg">
         </audio>
@@ -19,4 +19,39 @@
       </div>
     </div>
     {{/each}}
-  </div>
+  </div> -->
+<div class="container-fluid card-deck">
+      
+{{#each cards}}
+<div class=" mycard col-3">
+<audio controls>
+<source src="{{urleng}}" type="audio/mpeg">
+</audio> 
+<div class="label-card mycard-body">
+     
+<div class="input-card" >
+<div class="flip-card">
+<div class="front">
+<h3 class="mycard-title"> {{phrase}} </h3> 
+<div class="thumbsup-icon">
+<form action="/main/{{_id}}" method="POST">
+<button type="submit" class="btn-thumbsup-icon">
+ <img src="../images/thumbs_up.png" alt="like-button">
+</button>
+</form>
+<p>Click to flip</p>
+</div>
+<div class="back">
+<h3> {{translation}} </h3>
+<hr>
+<h3> {{meaning}} </h3>
+<hr>
+<p class="click">Click to flip</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</label>
+{{/each}}
+</div>

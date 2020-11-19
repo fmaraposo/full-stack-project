@@ -14,8 +14,8 @@ router.post('/signup', fileUpload.single('image'), (req, res) => {
   const {username, email, password} = req.body;
   const salt = bcrypt.genSaltSync(saltRound);
   const hashPassword = bcrypt.hashSync(password, salt);
-  let fileUrlOnCloudinary = req.file.path;
-  console.log(req.file.path);
+  //let fileUrlOnCloudinary = req.file.path;
+  //console.log(req.file.path);
   if(username === '' || password === '') {
       res.render('auth/signup', {
           errorMessage: 'Please check username and password'
@@ -31,7 +31,7 @@ router.post('/signup', fileUpload.single('image'), (req, res) => {
           return;
       }
   
-  User.create({ username, email, password: hashPassword, imageUrl: fileUrlOnCloudinary})
+  User.create({ username, email, password: hashPassword})//imageUrl: fileUrlOnCloudinary
   .then(() => {
       res.redirect('/');
   })
