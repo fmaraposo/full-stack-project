@@ -10,11 +10,20 @@ body {
   background-position: center;
   width: 100vw;
   height: 100vh;
- 
 }
 
 a {
   color: #00B7FF;
+}
+
+audio {
+  width: 128px;
+  height: 25px;
+}
+
+.textareas {
+  width: 100%;
+  margin-top: 15px;
 }
 //NavBar
 
@@ -37,7 +46,7 @@ a {
   font-size: 23px !important;
 }
 .search-bar{
-  width: 60% !important;
+  width: 35% !important;
   font-size: 23px !important;
 }
 nav {
@@ -49,6 +58,27 @@ nav {
 .navbar-brand {
   margin-left: 20px;
   padding-right: 30px;
+}
+
+.btns {
+  display: inline-block;
+    font-weight: bold;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height: 49px;
+    font-weight: bold;
 }
 
 .nav-item{
@@ -115,6 +145,19 @@ h1 {
   padding: 70px 30px;
 }
 
+.contactus-box {
+  width: 600px;
+  height: 615px;
+  background: rgba(0, 0, 0, 0.13);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 40px 30px
+}
+
 .avatar {
   width: 20%;
   height: 20%;
@@ -132,6 +175,13 @@ h2 {
   padding-top: 10px;
 }
 
+.contactus-box p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .login-box p {
   margin: 0;
   padding: 0;
@@ -143,7 +193,13 @@ h2 {
   margin-bottom: 40px;
   height: 40px;
   margin-top: 15px;
+}
 
+.contactus-box input {
+  width: 100%;
+  margin-bottom: 40px;
+  height: 40px;
+  margin-top: 15px;
 }
 
 .login-box input [type="text"], input [type="email"],input [type="password"] {
@@ -162,13 +218,14 @@ h2 {
   border: none;
   outline: none;
   height: 40px;
-  background:  #4257B2;
+  background: #4257B2;
   color: #fff;
-  font-size: 18px;
+  font-size: 21px;
   border-radius: 15px;
   width: 100%;
   margin-bottom: 20px;
-  margin-top: 10px;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 .login-btn:hover {
@@ -190,11 +247,12 @@ h2 {
   justify-content: flex-end;
   justify-self: flex-end;
   align-self: baseline;
+  padding-right: 50px;
 }
 
 .thumbsup-icon img {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 
 .btn-thumbsup-icon {
@@ -254,8 +312,7 @@ h2 {
 
  .back {
    position: absolute;
-   top: 50px;
-  
+   top: 10px;
  }
 
  .flip-card .back {
@@ -278,6 +335,8 @@ h2 {
 .front h3 {
   font-size: 22px;
   margin-top: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
   .front p {
@@ -291,11 +350,7 @@ h2 {
   
 } 
 .back{
-  height: 80%;
-}
-
-.click{
-  margin-top: 50px;
+  height: 85%;
 }
 
 .front p,
@@ -310,7 +365,7 @@ hr {
 }
 
 .back h3 {
-  font-size: 18px;
+  font-size: 20px;
   padding: 0 18px;
   //line-height: 10px;
   text-align: center;
