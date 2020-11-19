@@ -1,27 +1,4 @@
-<h1>MAIN</h1>
-<p>Welcome to {{title}}</p>
 
-{{#if loggedUser}}
-<p>Welcome {{loggedUser.username}} </p>
-{{/if}}
-
-<div class="card-deck container-fluid">
-  <audio controls><source src="{{urleng}}" type="audio/mpeg"></audio>
-    {{#each cards}}
-    <div class="mycard col-3">
-      <div class="mycard-body">
-        <h3 class="mycard-title"> {{phrase}} </h3>    
-        <div class="thumbsup-icon">
-          <form action="/main/{{_id}}" method="POST">
-            <button type="submit" class="btn-thumbsup-icon">
-              <img src="../images/thumbs_up.png" alt="like-button">
-            </button>
-          </form>
-      </div>
-      </div>
-    </div>
-    {{/each}}
-  </div> -->
 
  <div class="containers">
       <div class="row">
