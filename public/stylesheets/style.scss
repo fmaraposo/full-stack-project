@@ -1,31 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px 'Roboto Condensed', sans-serif;
+  margin: 0;
+  padding: 0 ;
+  font: 14px 'Roboto Condensed', sans-serif; 
+  box-sizing: border-box;
+  width: 100vw;
+}
+.body{
+  background-color : #0c205a ;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+ 
 }
 
 a {
   color: #00B7FF;
 }
-
-//Web Page Layout
-
-.row {
-  margin-top:30px;
-  width: 100%;
-}
-
-.card{
-  height: 300px;
-  width: 300px;
-}
-
-h1 {
-  padding-top: 70px;
-  padding-bottom: 20px;
-}
-
-
 //NavBar
+
+.nav-link {
+  font-weight: 500;
+}
 
 .form-control { //Also Signup and Login Form
   width: 30% !important;
@@ -88,45 +83,113 @@ input {
   outline: none;
 }
 
-//Index
 
-.front-card {
-  position: absolute;
+//Web Page Layout
+
+.row {
+  margin-right:0;
+  margin-top:30px;
   width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
+  
+}
+
+
+h1 {
+  padding-top: 70px;
+  padding-bottom: 20px;
+}
+
+/// new signup and login
+
+
+.login-box {
+  width: 600px;
+  height: 600px;
+  background: rgba(0, 0, 0, 0.130);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+
+.avatar {
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+h2 {
+  margin: 0 ;
+  padding: 0 0 20px;
   text-align: center;
+  font-size: 22px;
+  padding-top: 10px;
+}
+
+.login-box p {
+  margin: 0;
+  padding: 0;
   font-weight: bold;
-  font-size: 40px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 40px;
+  height: 40px;
+  margin-top: 15px;
+
+}
+
+.login-box input [type="text"], input [type="email"],input [type="password"] {
+  border: none;
+  border-bottom: 1px solid black #fff;
+  background: transparent;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+}
+.login-box textarea {
+  margin-top: 15px;
+}
+
+.login-btn  {
+  border: none;
+  outline: none;
+  height: 40px;
+  background:  #4257B2;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  cursor: pointer;
+  background: #3a5ae7;
+  color: #000;
+}
+
+.login-box p {
+  font-size: 20px;
 }
 
 //Cards
 
-.volume-icon {
-  margin-top: 8px;
-  height: 25px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.volume-icon img {
-  width: 25px;
-  height: 25px;
-}
-
-.text-to-speech {
-  border: none;
-  margin-top: 10px;
-}
 
 .thumbsup-icon {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 2.5%;
+  justify-self: flex-end;
+  align-self: baseline;
 }
 
 .thumbsup-icon img {
@@ -139,22 +202,17 @@ input {
   border: none;
 }
 
-.card-title {
-  text-align: center;
-  position: relative;
-  top: 70px;
-}
 
 //MAIN
 .mycard {
-  border: 1px solid black;
-  width: 100px;
-  height: 250px;
+  width: 100%;
+  height: 100%;
   border: 1px solid rgba(0,0,0,.125);
-  border-radius: .25rem;
-  margin-right: 15px;
-  margin-left: 15px;
-  margin-bottom: 30px;
+  height: 350px;
+  border-radius: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mycard-body {
@@ -165,68 +223,98 @@ input {
   height: 100%;
 }
 
-.volume-main-icon {
-  margin-top: 15px;
-  margin-right: 10px;
-  height: 25px;
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
-.volume-main-icon img {
-  width: 25px;
-  height: 25px;
-}
-
 .mycard-title {
   text-align: center;
 }
 
-//Flashcards
-body { font-family: sans-serif; }
+/////new card with filp?
 
-.scene {
-  width: 200px;
-  height: 260px;
-  border: 1px solid #CCC;
-  margin: 40px 0;
-  perspective: 600px;
-}
 
-.card {
-  width: 100%;
-  height: 100%;
-  transition: transform 1s;
+.label-card {
   transform-style: preserve-3d;
+  transform: translate(-50%, 50%);
   cursor: pointer;
-  position: relative;
+  width: 30%;
+  margin: 1.5%;
+ 
+  
 }
 
-.card.is-flipped {
-  transform: rotateY(180deg);
+ .flip-card {
+   transform-style: preserve-3d;
+   transition: all 0.5s ease-in-out;
+ }
+
+ .flip-card .front,
+ .flip-card .back {
+   text-align: center;
+   backface-visibility: hidden;
+ }
+ 
+
+ .back {
+   position: absolute;
+   top: 50px;
+  
+ }
+
+ .flip-card .back {
+   transform: rotateX(180deg);
+ }
+
+.input-card {
+  display: none;
 }
 
-.card__face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  line-height: 260px;
-  color: white;
+:checked + .flip-card {
+  transform: rotateX(180deg);
+}
+
+.label-card:hover :checked + .flip-card {
+  transform: rotateX(175deg);
+
+}
+
+.front h3 {
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+  .front p {
+  font-size: 14px;
+  //margin: 0 0 35px 0;
   text-align: center;
-  font-weight: bold;
-  font-size: 40px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  display: block;
+}  
+.front{
+  height: 80%;
+  
+} 
+.back{
+  height: 80%;
 }
 
-.card__face--front {
-  background: red;
+.click{
+  margin-top: 50px;
 }
 
-.card__face--back {
-  background: blue;
-  transform: rotateY(180deg);
+.front p,
+.back .click {
+  font-size: 18px;
+  font-weight: 400;
+} 
+
+hr {
+  
+  width :180px;
+}
+
+.back h3 {
+  font-size: 18px;
+  padding: 0 18px;
+  //line-height: 10px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .thumbsdown-img {
@@ -239,3 +327,12 @@ body { font-family: sans-serif; }
   border: none;
 }
 
+.containers {
+  width: 75vw;
+  display: flex;
+ justify-content: center;
+  padding-right: 0; 
+  padding-left: 0;
+  margin-left: 20vw;
+   
+}
