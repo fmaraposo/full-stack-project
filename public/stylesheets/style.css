@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font: 14px 'Roboto Condensed', sans-serif;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 100vw; }
 
 .body {
   background-color: #0c205a;
@@ -247,14 +248,6 @@ hr {
   text-align: center;
   margin: 0 auto; }
 
-.containers {
-  width: 75vw;
-  display: flex;
-  justify-content: center;
-  padding-right: 0;
-  padding-left: 0;
-  margin-left: 20vw; }
-
 .thumbsdown-img {
   width: 25px;
   height: 25px; }
@@ -262,5 +255,13 @@ hr {
 .btn-thumbsdown-img {
   background-color: white;
   border: none; }
+
+.containers {
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 20vw; }
 
 /*# sourceMappingURL=style.css.map */
