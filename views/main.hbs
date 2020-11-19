@@ -1,4 +1,4 @@
-<h1>MAIN</h1>
+
 
 <!-- <div class="card-deck container-fluid">
            <audio controls>
@@ -20,38 +20,48 @@
     </div>
     {{/each}}
   </div> -->
-<div class="container-fluid card-deck">
+
+ <div class="containers">
+      <div class="row">
+    {{#each cards}}
       
-{{#each cards}}
-<div class=" mycard col-3">
-<audio controls>
-<source src="{{urleng}}" type="audio/mpeg">
-</audio> 
-<div class="label-card mycard-body">
+    <label class="label-card">
+       <input class="input-card" type="checkbox" />
+    <div class="mycard flip-card" >
+      <div class="mycard-body front">
+        <h3 class="mycard-title"> {{phrase}} </h3> 
+      
+        <hr>
+        <p class="click">Click to flip</p>   
+        <div class="thumbsup-icon">
+          <form action="/main/{{_id}}" method="POST">
+            <button type="submit" class="btn-thumbsup-icon">
+              <img src="../images/thumbs_up.png" alt="like-button">
+            </button>
+          </form>
+      </div>
+      </div>
+
+       
+       <div class="mycard-body back">
+               
+               <audio controls>
+        <source src="{{urleng}}" type="audio/mpeg">
+        </audio>
      
-<div class="input-card" >
-<div class="flip-card">
-<div class="front">
-<h3 class="mycard-title"> {{phrase}} </h3> 
-<div class="thumbsup-icon">
-<form action="/main/{{_id}}" method="POST">
-<button type="submit" class="btn-thumbsup-icon">
- <img src="../images/thumbs_up.png" alt="like-button">
-</button>
-</form>
-<p>Click to flip</p>
-</div>
-<div class="back">
-<h3> {{translation}} </h3>
-<hr>
-<h3> {{meaning}} </h3>
-<hr>
-<p class="click">Click to flip</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</label>
-{{/each}}
-</div>
+        <h3 class="mycard-title"> {{translation}} </h3> 
+         <hr >
+        
+               <audio controls>
+        <source src="{{urleng}}" type="audio/mpeg">
+        </audio>
+ 
+         <h3 class="mycard-title"> {{meaning}} </h3>  
+         <hr>
+         <p class="click">Click to flip</p>         
+      </div>
+    </div>
+     </label>
+    {{/each}}
+    </div>
+  </div> 
