@@ -5,10 +5,11 @@
   <div class="row d-flex flex-wrap">
     {{#each foundLikes}}
     <div class="mycard col-4">
-      <div class="card-body">
-        <div class="volume-icon"><button class="btn-volume-icon"><img src="../images/audio.png"
-              alt="text-to-speech"></button></div>
+      <div class="mycard-body">
         <h3 class="mycard-title"> {{card.phrase}}  </h3>
+        <form action="/myarea/{{_id}}/delete" method="POST">
+        <button class="btn-thumbsdown-img" type="submit"><img class="thumbsdown-img" src="/images/thumb-down.png" alt="dislike"></button>
+        </form>
       </div>
     </div>
     {{/each}}

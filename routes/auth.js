@@ -32,10 +32,11 @@ router.post('/signup', fileUpload.single('image'), (req, res) => {
       }
   
   User.create({ username, email, password: hashPassword, imageUrl: fileUrlOnCloudinary})
-  .then(() => {
-      res.redirect('/');
+  .then((user) => {
+      req.session.currentUser = user;
+      res.redirect('/main');
   })
- .catch((error) => {
+  .catch((error) => {
     res.render('auth/signup', {
         errorMessage : `An error occured ${error}`
         });

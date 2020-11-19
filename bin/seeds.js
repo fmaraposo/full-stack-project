@@ -11,7 +11,7 @@ mongoose.connect('mongodb+srv://admin:admin1234@cluster0.y3zeb.mongodb.net/prove
 }); 
 const googleTTS = require('google-tts-api');
 
-const cards = [/*
+const cards = [
    {
     phrase: "Go for a lap around the big billiard" ,
     translation: "Vai dar uma volta ao bilhar grande",
@@ -145,7 +145,7 @@ const cards = [/*
   {
     phrase: "Luck monkey",
     translation: "Sorte macaca",
-    meaning: "Means bad luk"
+    meaning: "Means bad luck"
   },
   {
     phrase: "It's worth more a bird in your hand than two flying",
@@ -466,7 +466,7 @@ const cards = [/*
     phrase: "You are a good fork",
     translation: "Tu és um bom garfo",
     meaning: "If you eat well, and like all types off food, or not being picky"
-  },*/
+  },
   {
     phrase: "Doing a little cow",
     translation: "Fazer uma vaquinha",
@@ -511,7 +511,7 @@ const cards = [/*
     phrase: "In blind's land who has eyes is a king",
     translation: "Em terra de cego, quem tem olho é rei",
     meaning: "Means that in the middle of ignorance, even the dumbest stand out"
-  },
+  }/* ,
   {
     phrase: "The end of the world in panties",
     translation: "O fim do mundo em cuecas",
@@ -667,8 +667,6 @@ const cards = [/*
     translation: "Apalpar terreno",
     meaning: "Carefully assessing a situation"
   },
-  
-
   {
     phrase: 'Walking to papers',
     translation:' Andar aos papéis',
@@ -718,7 +716,7 @@ const cards = [/*
     phrase: 'Give two fingers of conversation',
     translation:'Dar dois dedos de conversa',
     meaning: 'Briefly talking to someone'
-  }/*,
+  },
   {
     phrase: 'Calling Gregory',
     translation:'Chamar o Gregório',
@@ -989,8 +987,8 @@ const cards = [/*
     phrase: 'Breaking the coconut laughing',
     translation:'Partir o coco a rir',
     meaning: 'Describes something really funny'
-  }, */
-  /* {
+  }, 
+  {
     phrase: 'I never saw him fatter',
     translation:'Nunca o vi mais gordo',
     meaning: 'Way to see you never saw that person in your life'
@@ -1030,7 +1028,6 @@ const cards = [/*
     translation:'Engolir sapos',
     meaning: 'To not say something that might upset someone and keep it to yourself instead, even if you get frustrated from it'
   },
-  
   {
     phrase: 'Walking stepping on eggs',
     translation:'Andar a pisar ovos',
@@ -1216,8 +1213,6 @@ const cards = [/*
     translation:'Nasceste com o rabo virado para a lua',
     meaning: 'Someone who is very lucky in life even if they are desorganized and lazy'
   },
-  
-  
   {
     phrase: 'Monster of seven heads',
     translation:'Bicho de sete cabeças',
@@ -1348,37 +1343,13 @@ cards.forEach((card) => {
         translationAudioPt,
         meaningAudioEng
       }).then((cardFromDb) => {
-        console.log(`Created a ${cardFromDb.phrase} new proverb card`)
+        console.log(`Created ${cardFromDb.phrase} proverbs`);
       }).catch((err) => {
-        console.log(`Error occured: ${err}`)
-      })
+        console.log(`Error occured: ${err}`);
+      });
     });
   });
 });
-})
+});
 
 
-/* cards.forEach((card) => {
-  let urleng = "";
-  let urlpt = "";
-  googleTTS(`${phrase}`, 'en', 1)
-  .then((url) => {
-    urleng = url;
-    return googleTTS(`${phrase}`, 'pt', 1)
-    .then((url2) => {
-      urlpt = url2;
-      return Card.create({
-        phrase,
-        translation,
-        meaning,
-        urleng,
-        urlpt
-}) */
-    
-
-/* Card.create(card)
- .then(cardFromDb => {
-   console.log(`Created ${cardFromDb.length} proverbs`);
-   mongoose.connection.close(); 
- }).catch(err => console.log(`An error occurred while creating movies from the DB: ${err}`));
- */

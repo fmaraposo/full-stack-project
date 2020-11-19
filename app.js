@@ -36,7 +36,7 @@ app.use(cookieParser());
 app.use(
   session({
       secret: 'my proverb',
-      cookie: {maxAge: 300000}, ///
+      cookie: {maxAge: 360000}, ///
       rolling: true
   })
 );
@@ -56,12 +56,8 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
-
-
 // default value for title local
 app.locals.title = 'Placeholder title';
-
-
 
 const index = require('./routes/index');
 app.use('/', index);
@@ -71,8 +67,5 @@ app.use('/', auth);
 
 const main = require('./routes/main');
 app.use('/', main);
-
-const flashcard = require('./routes/flashcard');
-app.use('/', flashcard);
 
 module.exports = app;

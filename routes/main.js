@@ -19,8 +19,6 @@ router.get('/myarea', requiredLogin, (req, res, next) => {
     .then((foundLikes) => {
     res.render('my-area', { foundLikes: foundLikes});
   });
-
- 
 });
 
 router.get('/main', requiredLogin, (req, res, next) => {
@@ -42,7 +40,6 @@ router.post('/main/:cardId', (req, res) => {
   });
 });
 
-
 router.get('/create', requiredLogin, (req, res, next) => {
   req.app.locals.loggedUser = req.session.currentUser;
  res.render('create');
@@ -51,28 +48,45 @@ router.get('/create', requiredLogin, (req, res, next) => {
 router.post('/create', requiredLogin, (req, res, next) => {
   req.app.locals.loggedUser = req.session.currentUser;
   let {phrase, translation, meaning} = req.body;
-  let urleng = "";
-  let urlpt = "";
+  let phraseAudioEng = "";
+  let translationAudioPt = "";
+  let meaningAudioEng = "";
+  let userId = req.session.currentUser._id;
   googleTTS(`${phrase}`, 'en', 1)
   .then((url) => {
-    urleng = url;
-    return googleTTS(`${phrase}`, 'pt', 1)
+    phraseAudioEng = url;
+    return googleTTS(`${translation}`, 'pt', 1)
     .then((url2) => {
-      urlpt = url2;
-      return Card.create({
-        phrase,
-        translation,
-        meaning,
-        urleng,
-        urlpt
-      }). then(() => {
-        res.render('create');
+      translationAudioPt = url2;
+      return googleTTS(`${meaning}`, 'en', 1)
+      .then((url3) => {
+        meaningAudioEng = url3;
+        return Card.create({
+          phrase,
+          translation,
+          meaning,
+          phraseAudioEng,
+          translationAudioPt,
+          meaningAudioEng
+      }).then((createdCard) => {
+        Like.create({
+          user: userId,
+          card: createdCard._id
+        }).then(() => {
+        res.redirect('/myarea');
+      });
       });
     });
     });
   });
+});
+
+router.post('/myarea/:cardId/delete', (req,res) => {
+  let cardId = req.params.cardId;
+  Like.findByIdAndDelete(cardId)
+  .then(() => {
+    res.redirect('/myarea');
+  });
+});
   
-
-
-
 module.exports = router;
