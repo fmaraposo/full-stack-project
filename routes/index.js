@@ -31,9 +31,7 @@ router.post('/card/:cardId', (req,res,next) => {
   });
 });  
 
-router.get('/contacts', (req, res, next) => {
-  res.render('contacts');
-});
+
 
 
 
