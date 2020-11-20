@@ -14,7 +14,7 @@ router.post('/contacts', (req, res) => {
     message
   })
   .then(()=> {
-    res.render('submited-contacts');
+    res.redirect('/main');
   })
   });
 
