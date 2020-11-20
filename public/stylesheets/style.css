@@ -12,7 +12,10 @@ body {
   height: 100vh; }
 
 a {
-  color: #00B7FF; }
+  color: white !important; }
+
+a:hover {
+  color: black !important; }
 
 audio {
   width: 128px;
@@ -84,6 +87,7 @@ nav {
 
 .logout-btn {
   border: none;
+  color: white;
   background-color: #4257B2; }
 
 .form-controls {
@@ -168,7 +172,7 @@ h2 {
 
 .login-box input {
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   height: 40px;
   margin-top: 15px; }
 
@@ -334,5 +338,24 @@ hr {
   padding-left: 0;
   margin-left: 20vw;
   margin-top: -40px; }
+
+.forms-control {
+  display: block;
+  width: 30%;
+  height: 30%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; }
+
+.div-form-create {
+  margin-top: 70px;
+  margin-left: 70px; }
 
 /*# sourceMappingURL=style.css.map */
