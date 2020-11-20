@@ -68,4 +68,7 @@ app.use('/', auth);
 const main = require('./routes/main');
 app.use('/', main);
 
+const contacts = require('./routes/contacts');
+app.use('/', contacts);
+
 module.exports = app;
