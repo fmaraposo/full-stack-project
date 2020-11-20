@@ -25,6 +25,16 @@ audio {
   width: 100%;
   margin-top: 15px;
 }
+
+.page-title {
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+.page-subtitle {
+  margin-left: 50px;
+}
+
 //NavBar
 
 .nav-link {
@@ -143,6 +153,7 @@ h1 {
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   padding: 70px 30px;
+  margin-top: 25px;
 }
 
 .contactus-box {
@@ -265,7 +276,7 @@ h2 {
 .mycard {
   width: 100%;
   height: 100%;
-  border: 1px solid rgba(0,0,0,.125);
+  border: 6px solid rgba(0,0,0,.125);
   height: 350px;
   border-radius: 0 20px 0 20px;
   display: flex;
@@ -389,5 +400,15 @@ hr {
   padding-right: 0; 
   padding-left: 0;
   margin-left: 20vw;
-   
+  margin-top: -65px;
+}
+
+.containers-index {
+  width: 75vw;
+  display: flex;
+  justify-content: center;
+  padding-right: 0; 
+  padding-left: 0;
+  margin-left: 20vw;
+  margin-top: -40px;
 }

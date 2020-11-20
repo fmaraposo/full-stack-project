@@ -1,4 +1,10 @@
 
+ {{#if loggedUser}}
+ <h1 class="page-title">Welcome {{loggedUser.username}}</h1>
+ {{/if}}
+ 
+ 
+ 
  <div class="containers">
       <div class="row">
     {{#each cards}}

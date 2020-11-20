@@ -10,7 +10,7 @@ const { createIndexes } = require('../models/Card');
 router.get('/', (req, res, next) => {
   req.app.locals.loggedUser = req.session.currentUser;
   Card.find()
-  .limit(6)
+  .limit(3)
   .then((allCardsFromDB) => {
     res.render('index', {user: req.session.currentUser, cards: allCardsFromDB});
   });
