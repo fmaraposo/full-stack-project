@@ -17,7 +17,7 @@
     rel="stylesheet">
 
 </head>
-
+<body>
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
     aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,12 +75,9 @@
    <input class="form-control mr-sm-2  search-bar" type="search" placeholder="Search" aria-label="Search">
     <button class="btns btn-primary my-2 my-sm-0" onclick="filter()" type="button">Search</button> 
   </div>
+  
 </nav>
 {{/if}}
-
-
-
-<body>
 
 
   {{{body}}}
@@ -88,41 +85,43 @@
   <script src="/javascripts/script.js"></script>
   <script>
     function filter(){
+      console.log('doggo');
       let searchParameter;
       if (document.getElementsByClassName('search-bar')[0].value) {
         searchParameter = document.getElementsByClassName('search-bar')[0].value;
+        console.log(searchParameter);
       } else {
         searchParameter = document.getElementsByClassName('search-bar')[1].value;
+        console.log(searchParameter);
       }
     
     //palavra a procurar
     
     let titleElements = document.getElementsByClassName('mycard-title'); //array de elementos com classe card-title <h3>titulos</h3>
+    let titleElementArr = [...titleElements];
 
-    for(let i = 0; i < titleElements.length; i++){ //iterar cada titulo
-
-      let card = titleElements[i].parentElement; //ir buscar o elemento pai do titulo
-      let cardElement = card.parentElement; //ir buscar o avó do titulo
-      let title = titleElements[i].innerText; //buscar ao elemento titulo o seu texto (o que está realmente dentro do h3)
-      let titleArray = title.split(' '); //fazer split to texto para um array
-      let searchToUpper = searchParameter.toUpperCase(); //passar o texto a procurar para CAPS
-      let found = false; //variável auxiliar para saber se encontrámos match, inicializada a false porque a cada novo título partimos do princípio que não houve match
-      for(let k = 0; k < titleArray.length; k++){ //iterar cada palavra do título
-        let titleToUpper = titleArray[k].toUpperCase(); //passar a palavra a CAPS
-        if(titleToUpper.includes(searchToUpper)){ //comparar cada palavra com o texto a procurar
-          found = true; //se houver match variável auxiliar passa a true
-          cardElement.style.display = 'block'; //o elemento avó fica com display block (visível)
-          break; //break para sair do loop e continuar o código -> if(!found)
-        }
-      }
-      if(!found){ //se não tiver existido match
-      cardElement.style.display = 'none'; //esconder o avó alterando a propriedade display para none
-      
-      }
-      
-    }
+    titleElementArr.forEach((titleElement) => { 
+       let card = titleElement.parentElement; //ir buscar o elemento pai do titulo
+       let cardElement = card.parentElement; //ir buscar o avó do titulo
+       cardElement.parentElement.style.display = 'none';
+    });
     
+    titleElementArr.forEach((titleElement) => { //iterar cada titulo
+
+      let card = titleElement.parentElement; //ir buscar o elemento pai do titulo
+      let cardElement = card.parentElement; //ir buscar o avó do titulo
+      let title = titleElement.innerText; //buscar ao elemento titulo o seu texto (o que está realmente dentro do h3)
+
+     // let titleArray = title.split(' '); //fazer split to texto para um array
+      let searchToUpper = searchParameter.toUpperCase(); //passar o texto a procurar para CAPS
+      if (title.toUpperCase().includes(searchToUpper)) {
+       
+       cardElement.parentElement.style.display = 'flex';
+       console.log(cardElement);
+      }
+    })
   }
+  
   </script>
 </body>
 

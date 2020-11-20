@@ -1,4 +1,4 @@
-const cloudinary = require ('cloudinary').v2; //methods to connect with cloudinary clouds
+/*const cloudinary = require ('cloudinary').v2; //methods to connect with cloudinary clouds
 const multer = require('multer'); // methods to deal with form-data request
 const {CloudinaryStorage} = require('multer-storage-cloudinary'); // methods to connect multer with cloudinary
 
@@ -21,4 +21,4 @@ const storage = new CloudinaryStorage ({
 
 const uploadCloud = multer({storage});
 
-module.exports = uploadCloud;
+module.exports = uploadCloud; */
